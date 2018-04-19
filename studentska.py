@@ -8,7 +8,7 @@ def stampaj_tabelu(podaci, zaglavlje):
 
 def stampaj_spisak():
 
-    fakultet = raw_input("Za koji fakultet zelite da dobijete spisak: ")
+    fakultet = input("Za koji fakultet zelite da dobijete spisak: ")
 
 
     baza_fajl = open("baza.db", "r")
@@ -44,8 +44,8 @@ def dodaj_studenta():
     print("----------------------")
     print("\n")
 
-    ime = raw_input("Unesite ime studenta: ")
-    prezime = raw_input("Unesite prezime studenta: ")
+    ime = input("Unesite ime studenta: ")
+    prezime = input("Unesite prezime studenta: ")
 
     postojeci_fakulteti = ["Matematika", "Elektrotehnika"]
     fakultet = raw_input("Unesite fakultet studenta: ")
@@ -86,7 +86,7 @@ def obrisi_studenta():
     print("----------------------")
     print("\n")
 
-    index = raw_input("Unesite indeks studenta: ")
+    index = input("Unesite indeks studenta: ")
 
 
     infile = open('baza.db','r').readlines()
@@ -112,7 +112,7 @@ while True:
     print(" 1 - Stampaj listu studenata")
     print(" 2 - Dodaj novog studenta")
     print(" 3 - Obrisi studenta")
-    print(" 4 - Suspenduj studenta")
+    print(" 0 - Izlaz")
     print("=============================")
     komanda = str(input("Unesite zeljenu komandu: "))
     print("\n\n")
@@ -123,7 +123,8 @@ while True:
         dodaj_studenta()
     elif komanda == "3":
         obrisi_studenta()
-
+    elif komanda =="0":
+        quit()
 
 
     print("\n\n\n\n\n")
